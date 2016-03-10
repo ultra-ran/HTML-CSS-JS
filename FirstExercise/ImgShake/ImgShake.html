@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片抖动效果</title>
+	<style>
+		#wrap{
+			width: 700px;
+			height: 100px;
+			margin:100px auto 0;
+			text-align: center;
+			border:1px solid ;
+			position: relative;
+		}
+		img{
+			width: 90px;
+			height: 100px;
+			top: 10px;
+			position: absolute;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var wrap=document.getElementById('wrap');
+			var aImg=wrap.getElementsByTagName('img');
+			function getStyle(obj,attr){
+				return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr];				
+			}
+			for (var i = 0; i < aImg.length; i++) {
+				aImg[i].style.left=20+i*110+'px';
+			}
+			for (var i = 0; i < aImg.length; i++) {
+				aImg[i].onmouseover=function(){	
+					shakes(this,'left');}
+				}
+				function shakes(obj,attr){
+					var step=20;
+					//var oP=document.getElementById('oP');
+					//var str=[];
+					//debugger
+					if(!obj.off)
+					{
+						clearInterval(obj.timer);
+					var old=parseInt(getStyle(obj,attr));
+					obj.timer=setInterval(function(){
+						obj.style[attr]=step+old+'px';
+						step=-step;
+						step=step>0?step-3:step;
+						obj.off=true;
+						//debugger
+						//str.push(step)
+					if(Math.abs(step)<3)
+					{
+						obj.style[attr]=old+'px';
+						clearInterval(obj.timer);
+						obj.off=false;
+						//alert(obj.tiemr)
+						//oP.innerHTML=str;
+					}
+
+				},14)
+					}
+				
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<img src="img/1.jpg" alt="">
+			<img src="img/2.jpg" alt="">
+			<img src="img/3.jpg" alt="">
+			<img src="img/4.jpg" alt="">
+			<img src="img/4-1.jpg" alt="">
+			<img src="img/4-2.jpg" alt="">
+
+		</div>
+		<p id="oP"></p>
+	</body>
+	</html>

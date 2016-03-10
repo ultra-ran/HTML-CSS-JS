@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+</head>
+<script>
+
+window.onload = function() {
+    var aInput = document.getElementsByTagName('input');
+    var oText = aInput[0];
+    var aLi=document.getElementsByTagName('li');
+    var oUl = document.getElementsByTagName('ul')[0];
+    var wrap = document.getElementById('wrap');
+    aInput[1].onclick = function() {
+        var oLi = document.createElement('li');
+        oLi.innerHTML = oText.value;
+        var oA = document.createElement('a');
+        oA.innerHTML = "删除";
+        oA.href = 'javascript:;';
+        oA.onclick = function() {
+            oUl.removeChild(this.parentNode);
+
+        }
+        oLi.appendChild(oA);
+
+        if ( oUl.children[0] ) {
+			oUl.insertBefore( oLi, oUl.children[0] );
+		} else {
+			oUl.appendChild( oLi );
+		}
+		 for(var i=0;i<aLi.length;i++)
+    {
+    	aLi[i].onclick=function(){
+    		this.style.backgroundColor='yellow';
+    		this.deleteTag=true;
+    		
+    	}
+    }
+    }
+    aInput[3].onclick=function(){
+    	for (var i = 0; i < oUl.children.length; i++) {
+    		if(oUl.children[i].deleteTag==true)
+    			oUl.removeChild(oUl.children[i]);
+    	}
+    }
+    aInput[2].onclick=function(){
+    	while(oUl.children[0])
+    		oUl.removeChild(oUl.children[0]);
+    }
+
+}
+</script>
+<body>
+	<div id="wrap">
+		<input type="text">
+		<input type="button" value="留言">
+		<input type="button" value="全部删除">
+		<input type="button" value="删除选中">
+		<ul></ul>
+	</div>
+</body>
+</html>

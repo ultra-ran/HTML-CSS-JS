@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>带缩略图的图片轮换</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		#wrap{			
+			width: 420px;
+			height: 550px;
+			margin:20px auto;
+			background-color: #eee;
+			text-align: center;
+			border:1px solid black;
+			position: relative;
+			cursor:default;
+		}
+		img{
+			margin-top: 20px;
+			width: 400px;
+			height: 500px;
+			text-align: center;
+			
+		}
+		#wrap>a{
+			position: absolute;
+			top:250px;
+			width: 50px;
+			height: 50px;
+			font:bold 30px/50px '黑体';
+			right: 20px;
+			background-color: #EDDA5A;
+			display: inline-block;
+			border-radius: 50%;
+			opacity:.5;
+			color: #222;
+			text-decoration: none;
+			cursor: default;
+		}
+		#a1{
+			left:20px;
+		}
+		#control{
+			position: absolute;
+			bottom: 5px;
+			left: 155px;
+			/*border:1px solid black;*/
+		}
+		#control a{
+			display: inline-block;
+			/*border:1px solid black;*/
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			background-color: #BBB8B8;			
+			border-radius: 50%;	
+		}
+		#control a+a{
+			margin-left: 10px;
+		}
+		#wrap a:hover{
+			opacity: .7;
+		}
+		#control a:hover{
+			background-color: #EBE777;
+		}
+		#oimgsm{
+			display: none;
+		}
+		.small{
+			width:40px;
+			height: 50px;
+			position: absolute;	
+			border:3px solid #DAC8C8;		
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var oImg=document.getElementsByTagName('img')[0];
+			var aBtn=document.getElementsByTagName('a');	
+			var piclist=['img/4-1.jpg','img/4-2.jpg','img/4-3.jpg','img/4-4.jpg'];	
+			var oimgsm=document.getElementById('oimgsm');
+			var num=0;
+			for(var j=0;j<aBtn.length;j++)	
+			{
+				aBtn[j].index=j;
+				if(j<2)
+				{
+					aBtn[j].onclick=function(){					
+						if(this.index)
+						{
+							num++;
+							if(num>piclist.length-1)
+								num=0;
+						}
+						else
+						{
+							num--;
+							if(num<0)
+								num=piclist.length-1;
+						}
+						oImg.src=piclist[num];
+					}
+				}				
+				else
+				{
+					aBtn[j].onclick=function(){
+						
+						oImg.src=piclist[this.index-2];
+					}
+
+					aBtn[j].onmouseover=function(){
+						oimgsm.src=piclist[this.index-2];
+						oimgsm.className='small';						
+						oimgsm.style.display='block';
+						oimgsm.style.left=143+30*(this.index-2)+'px';						
+						oimgsm.style.bottom=35+'px';						
+					}
+					aBtn[j].onmouseout=function(){
+						oimgsm.style.display='none';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<img src="img/4-1.jpg" alt="">
+		<a href="javascript:;" id="a1" ><</a>
+		<a href="javascript:;" id="a2" >></a>		
+		<div id="control">
+			<a>1</a><a>2</a><a>3</a><a>4</a>
+		</div>
+		<img src="" id="oimgsm">
+	</div>
+</body>
+</html>

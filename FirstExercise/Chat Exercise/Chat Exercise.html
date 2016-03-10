@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>聊天练习</title>
+	<style>
+		.wrap{
+			width: 400px;
+			margin: 0 auto;
+			border:5px solid black;
+			border-radius: 10px;
+		}
+		#chat{
+			height: 250px;
+			background-color: white;
+			overflow: auto;
+		}
+		#conbar{
+			height: 40px;
+			width: 400px;
+			padding-top: 10px;
+			border-radius: 0 0 5px 5px;
+			background-color: #ddd;			
+		}
+		#Oimg{
+			float: left;
+			width: 30px;
+			height: 30px;
+			border:2px solid #777;
+			vertical-align: middle;
+			border-radius: 20%;
+			margin-left: 10px;
+			margin-right: 10px;
+			cursor:pointer;
+		}
+		#Otext{
+			float: left;
+			margin-top: 1px;
+			font-size: 18px;
+			border-radius: 5px;				
+			width: 280px;
+			padding: 0;		
+			line-height: 30px;
+			outline:none;
+			background-color: #fff;			
+		}
+		#submit{
+			float: left;
+			border:none;			
+			font-size: 20px;
+			line-height:30px;
+			margin-left: 8px;
+			cursor:pointer; 
+		}
+		.lh img{
+			width: 30px;
+			height: 30px;
+			border-radius: 5px;
+			margin-left: 10px;
+			margin-top: 10px;
+			float: left;
+		}
+		.lh span{
+			float: left;
+			background-color: #82AD9A;
+			margin-left: 5px;
+		}
+		.lp img{
+			width: 30px;
+			height: 30px;
+			border-radius: 5px;
+			margin-right: 10px;
+			margin-top: 10px;
+			float: right;
+		}
+		.lp span{
+			float: right;
+			margin-right: 5px;			
+			background-color: #3BA33B;			
+		}		
+		.com span{			
+			margin-top: 10px;
+			max-width: 300px;
+			font-size: 18px;
+			padding: 5px;
+			word-break: break-all;
+			border-radius: 5px;			
+		}
+		.com{
+			clear: both;			
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var chat=document.getElementById('chat');
+			var Oimg=document.getElementById('Oimg');
+			var submit=document.getElementById('submit');
+			var Otext=document.getElementById('Otext');
+			var off=false;
+			var imglist=['img/lh.jpg','img/lp.jpg']
+			Oimg.onclick=function(){
+				Otext.value='';
+				if(off===true)
+				{
+					Oimg.src=imglist[1];
+					off=false;
+				}
+				else{
+					Oimg.src=imglist[0];
+					off=true;
+				}
+			}
+			submit.onclick=function(){
+				if(Otext.value){
+					var old=chat.innerHTML;
+					if(off===true)
+						chat.innerHTML='<div class="com lh"><img src="img/lh.jpg" alt=""><span>'+Otext.value+'</span></div>'+old;
+					else
+						chat.innerHTML='<div class="com lp"><img src="img/lp.jpg" alt=""><span>'+Otext.value+'</span></div>'+old;
+					Otext.value='';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<label for="Otext">
+			<div class="wrap">
+				<div id="chat"></div>
+			<div id="conbar"><label for="Otext"><img src="img/lp.jpg" alt="" id="Oimg" ></label><!-- 
+			--><input type="text" id="Otext" name="txt"><input type="button" id="submit" value="确定">
+		</div>
+	</div></label>
+</div>
+</body>
+</html>

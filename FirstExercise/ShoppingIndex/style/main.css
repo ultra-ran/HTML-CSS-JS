@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/*公用样式*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.comwid{
+	width:1000px;
+	margin:0 auto;
+	/*background-color: yellow;*/					
+}
+button{
+	cursor: pointer;
+}
+/*header样式*/
+header{
+	min-width: 1000px;
+	height: 32px;
+	background-color: #F7F7F7 ;		
+	font:12px/32px normal "宋体";
+}
+.h-left{
+	background: url(../images/icon/ico1.gif) left center no-repeat;
+	padding-left: 20px;
+}
+.h-right{
+	margin-right: 12px;
+}
+header a{
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+}
+/*banner样式*/
+.banner{
+	min-width: 1000px;
+	height: 85px;
+	background-color: #1D7AD9;			
+}
+.logo{
+	width: 112px;
+	height: 59px;
+	margin-left: 40px;
+	margin-top: 12px;						
+}
+.shop{
+	height: 35px;
+	font:14px/35px  "微软雅黑";
+	color: #fff;
+	background-color: #FF8C00;
+	border: none;
+	display: inline-block;
+}
+.search-area{
+	margin:23px 0 0 185px;
+}
+.search{
+	background-color: #fff;
+	width: 360px;
+	height: 35px;
+	font:14px/35px  "微软雅黑";
+	padding:0 10px;
+	border: none;
+}
+.search-btn{
+	width: 69px;			
+}
+.shop-lists{
+	margin-top: 23px;
+	background-color: red;
+	margin-left:32px;
+	vertical-align: middle;
+
+}
+.shopcar{
+	width: 87px;	
+	border-right: 1px solid #E27A00;
+	padding-left:10px ;
+
+}
+.shop-num{
+	border-left: 1px solid #E27A00;
+	width: 46px;
+	padding-right: 10px;
+	text-align: right;
+}
+.shop-num img{
+	padding-left: 5px;
+}
+/*nav样式*/
+nav{
+	min-width: 1000px;
+	height: 35px;
+	width: 100%;
+	text-align: center;
+	background-color: #1369C0;			
+}
+.all-list {
+	width: 189px;
+	color: #fff;
+	font:16px/35px "微软雅黑";
+}
+.all-list span{
+	background: url(../images/icon/sj.gif) left center no-repeat yellow;
+	display: inline-block;
+	width: 11px;
+	height: 7px;
+	overflow: hidden;
+	margin-left: 11px;
+}
+nav li a{
+	width: 100px;
+	float: left;
+	color: #fff;
+	font:14px/35px "微软雅黑";
+}
+.active{
+	background-color:#4593FD;
+}
+/*main左侧导航栏样式*/
+.main{
+	position: relative;
+
+}
+.maintop aside{
+	min-height: 326px;
+	background-color:#4593FD;
+}
+
+.maintop aside a{
+	font:12px "宋体";
+	color: #fff;
+}
+.maintop aside .b{
+	font:14px bold "微软雅黑";
+	color: #fff;
+}
+.asidenav{
+	width: 188px;
+	height: 59px;
+	background-color: #4593FD;
+	border-bottom: 1px solid  #3487F2;
+	border-top:1px solid #5AA1FE;
+	border-left: 1px solid #4593FD;
+}
+.asidecon{
+	padding:14px 0 14px 10px;
+
+}
+.asidenav dl{
+	float: left;
+}
+.asidenav dt{
+	height: 22px;
+	background:  url(../images/icon/yjt.gif) 171px center no-repeat;
+}
+.asidenav a{
+	margin-left: 5px;
+}
+.asidecon dl dt .selected{
+	display: inline-block;
+	background:url(../images/icon/yx.png) center no-repeat;
+	width: 48px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+.asidenav.asideact a{			
+	color:#000;
+}
+.asideact{
+	background-color: #fff;
+}
+/*navdetails样式*/
+.navdetails{
+	float: left;
+	width: 568px;
+	min-height: 250px;
+	border:1px solid #DDD;
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	/*display: none;			*/
+}
+.navdetails dl{
+	margin-left: 19px;
+	width: 530px;
+	float: left;				
+}
+.navdetails dt,.navdetails dd{			
+	font:12px "宋体";
+	color: #656565;
+	line-height: 26px;
+	float: left;
+	padding:5px 0 4px 0px;
+	/*height:56px;	 */
+	/*如果设置height值则强制border包含的高度*/
+	/*background-color: red;*/
+}
+.navdetails dt{			
+	margin-right:13px;			
+}
+.navdetails dt a{
+	color: blue;
+	font-weight: 700;
+}
+.navdetails dd{			
+	width: 458px;
+	border-bottom:1px solid #DDD;
+	
+}
+.navdetails dd a{
+	float: left;
+	padding:0px 5px;
+}
+.navdetails .detailbot dt a{
+	display: inline-block;
+	background-color:#2785E6;
+	font:12px/26px normal "宋体";
+	color: #fff;
+	padding-left: 1em;			
+}
+.navdetails .detailbot dt{
+	padding:10px 0 10px 0px;
+}
+.navdetails .detailbot dt i{
+	background:url(../images/icon/yjt.png) center no-repeat;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	padding-left: 1em;
+}
+.focus img{
+	vertical-align:top;
+	position: absolute;
+	top:0;
+	left: 0;
+	
+}
+.focus{
+	width: 811px;
+	height: 326px;
+	position: absolute;
+	left: 189px;
+	overflow: hidden;	
+	z-index: -10;		
+}
+.computerheader,.foodheader{
+	height: 45px;
+	background: url(../images/icon/ico4.gif) left center no-repeat;
+	margin: 15px 0;			
+}
+.computerheader h2{
+	*display: inline;
+	*zoom: 1;
+	color: #000;
+	display: inline-block;
+	font:24px/45px bold "微软雅黑";
+	line-height: 45px;
+	padding-left:60px ;
+}
+.computerheader span{
+	float: right;
+	margin-right: 20px;
+	line-height: 45px;
+}
+.computer aside img{
+	vertical-align: top;
+}
+.computer-ri {
+	width: 809px;
+	border-top:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom: 3px solid #FF7201;
+	overflow: hidden;
+}  
+.computer-ri .wrapp{
+	width: 816px;			
+	overflow: hidden;
+}
+.computer-ad{
+	width: 203px;
+	height: 280px;
+	border-right:1px solid #ccc;
+	margin: 0;
+	text-align: center;
+}
+.computer-ad img{
+	width: 133px;
+	height: 151px;
+	display: inline-block;
+	margin-top: 45px;
+}
+.computer-ad figcaption h4{
+	padding-top: 20px;
+	font:16px normal "微软雅黑";
+	color:#000;
+}
+.computer-ad figcaption span{
+	font:14px normal "微软雅黑";
+	color: #FF7300;
+}
+.computer-ad2{
+	width: 203px;
+	height: 95px;
+	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;
+	margin: 0;
+	padding-top:20px; 
+}
+.computer-ad2 img{
+	width: 83px;
+	height: 83px;
+	margin-left: 14px;			
+	vertical-align: top;
+}
+.computer-ad2 figcaption{
+	display: inline-block;
+}
+.computer-ad2 figcaption h4{
+	font:12px normal "新宋体";
+	color:#FF7300;
+	width: 94px;
+	line-height: 17px;
+	padding-left: 5px;
+	padding-top: 17px;
+}
+.computer-ad2 figcaption span{
+	font:14px normal "微软雅黑";
+	color: #FF7300;
+	padding-left: 5px;
+}
+/*footer样式*/
+footer{
+	height: 169px;
+	min-width: 1000px;
+	margin-top: 40px;
+	padding-top: 55px;
+	background-color: #D4D4D4;
+	clear: both;
+	text-align: center;
+	font:12px/30px "新宋体";
+	color: #000; 
+}
+footer a{
+	font:12px/30px "新宋体";
+	color: #000;
+	padding-right: 1px;
+}
+footer a+a{
+	padding-left: 10px;
+	border-left: 1px solid #000; 
+
+}
+footer .footpic{
+	margin-top: 35px;
+}
+footer .footpic img{
+	margin-right: 10px;
+}

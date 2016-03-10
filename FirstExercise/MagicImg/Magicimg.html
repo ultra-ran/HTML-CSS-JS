@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片方格生成</title>
+	<style>
+		#wrap{
+			width: 517px;
+			height: 600px;
+			background: #fff url(img/pic.jpg) 0 0 no-repeat;
+		}
+		#wrap div{
+			background-color: #ccc;
+			width: 51.7px;
+			height: 60px;
+			float: left;
+			border:1px solid #ccc;
+			box-sizing:border-box;	
+		}
+		#wrap .show{
+			background: none;			
+		}
+
+	</style>
+	<script>
+		window.onload=function(){
+			var wrap=document.getElementById('wrap');
+			var str=[];
+			var odiv=wrap.getElementsByTagName('div');
+			var Change=function(){
+				that.setAttribute("class","show"); 
+			}
+			for(var i=0;i<100;i++)
+			{
+				str+='<div></div>';
+			}
+			wrap.innerHTML=str;			
+			for (var i = 0; i < odiv.length; i++) {
+				odiv[i].onmouseover=function(){					
+					 // this.className='show';
+					// this.style.background='none';
+					// this.style.cssText='background: none'; 
+					// this.setAttribute("class","show"); 
+					that=this;
+					 Change(); 
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		
+	</div>	
+</body>
+</html>

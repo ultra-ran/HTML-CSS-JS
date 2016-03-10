@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+</head>
+<style>
+	#wrap {
+		width: 500px;
+		height: 300px;
+		margin: 20px auto;
+		background-color: #ccc;
+		position: relative;
+		text-align: center;
+		border: 1px solid;
+		overflow: hidden;
+	}
+	#wrap img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 500px;
+		height: 300px;
+	}
+	#wrap a {
+		font-size: 30px;
+		text-decoration: none;
+		position: absolute;
+		top: 125px;
+		width: 30px;
+		background-color: #121212;
+		opacity: .5;
+		text-align: center;
+		color: #fff;
+	}
+	#prev {
+		left: 10px;
+	}
+	#next {
+		right: 10px;
+	}
+</style>
+<script>
+	window.onload = function() {
+		var wrap = document.getElementById('wrap');
+		var aImg = wrap.getElementsByTagName('img');
+		var aA = wrap.getElementsByTagName('a');
+		var imgList = ["img/test-1.gif", "img/test-2.gif", "img/test-3.gif", "img/test-4.gif", "img/test-5.gif", "img/test-6.gif"];
+    // 设置aImg内的元素为一个数组，以使用push,pop,shift,unshift方法
+    var aImgList = [aImg[0], aImg[1], aImg[2]];
+    // 获取元素attr属性函数		
+    function getStyle(obj, attr) {
+    	return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+    }
+    // 运动函数  其中that为调动改函数的执行环境，obj1，obj2为要一起运动的两个对象，attr可设置对象在水平或竖直方向运动，dir为定时器间隔移动步长，target1，target2分别为obj1，obj2移动的终点，endFn1, endFn2为doMove的回调函数；
+    function doMove(that, obj1, obj2, attr, dir, target1, target2, endFn1, endFn2) {
+    	dir = parseFloat(getStyle(obj1, attr)) > target1 ? -dir : dir;
+    	clearInterval(obj1.timer);
+    	obj1.timer = setInterval(function() {
+    		var speed1 = parseFloat(getStyle(obj1, attr)) + dir;
+    		var speed2 = parseFloat(getStyle(obj2, attr)) + dir;
+    		if (speed1 < target1 && dir < 0 || speed1 > target1 && dir > 0)
+    			speed1 = target1;
+    		obj1.style[attr] = speed1 + 'px';
+    		obj2.style[attr] = speed2 + 'px';
+    		
+    		if (speed1 == target1) 
+    		{
+    			clearInterval(obj1.timer);
+    			endFn1 && endFn1();
+    			endFn2 && endFn2();
+    			that.onoff = true
+    		} 
+    		else
+    			that.onoff = false;
+    	}, 40);
+    }
+    // 通过队列的方法设置imgList内的图片像链条一样交换，并设置aImgList[0]、aImgList[1]、aImgList[2]的照片；
+    function setImg(that, aImgList, imgList) {
+    	if (that.id == 'prev')
+    	{
+    		imgList.push(imgList.shift());    		
+    		aImgList[2].src = imgList[0];
+    	}
+    	else
+    	{
+    		imgList.unshift(imgList.pop());
+    		aImgList[0].src = imgList[0];
+
+    	}
+    }
+
+    // 初始化aImg[0]、aImg[1]、aImg[2]照片及位置
+    (function() {
+    	aImg[0].style.left = '-500px';
+    	aImg[1].src = imgList[0];
+    	aImg[1].style.left = 0;
+    	aImg[2].style.left = '500px';
+    	aA[0].onoff = true;
+    	aA[1].onoff = true;
+    })();
+    aA[0].onclick = function() {
+        var that = this;
+        if (this.onoff) 
+        {
+        	doMove(that, aImgList[1], aImgList[2], 'left', 50, -500, 0, setImg(that, aImgList, imgList));
+        	aImgList[0].style.left = '500px';
+            // aImgList[1]始终代表当前显示的元素；aImgList[0]时钟代表当前显示图片左侧的元素，aImgList[1]始终代表当前显示元素右侧的元素；
+        	aImgList.push(aImgList.shift());
+        }
+    }
+    aA[1].onclick = function() {
+        var that = this;
+        if (this.onoff) 
+        {
+        	doMove(that, aImgList[0], aImgList[1], 'left', 50, 0, 500, setImg(that, aImgList, imgList));
+        	aImgList[2].style.left = '-500px';
+        	aImgList.unshift(aImgList.pop());
+        }
+    }
+}
+</script>
+<body>
+	<div id="wrap">
+		<img src="" alt="" >
+		<img src="" alt="" >
+		<img src="" alt="" >
+		<a href="javascript:;" id="prev"><</a>
+		<a href="javascript:;" id="next">></a>
+	</div>
+</body>
+</html>

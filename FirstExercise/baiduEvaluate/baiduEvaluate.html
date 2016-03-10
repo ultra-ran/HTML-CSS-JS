@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度文库评分</title>
+	<style>
+		#wrap{
+			width: 270px;
+			margin:20px auto;
+
+		}
+		#wrap span{
+			float: left;
+			margin-top: 4px;
+			margin-left: 10px;
+		}
+		#wrap span+span{
+			margin-left: 10px;
+		}
+		#wrap img{
+			float: left;
+			margin-left: 7px;
+		}
+
+	</style>
+	<script>
+		window.onload=function(){
+
+			!function(){
+				var wrap=document.getElementById('wrap');
+				var ospan=wrap.getElementsByTagName('span')[1];
+				var oImg=wrap.getElementsByTagName('img');
+				var imglist=['img/icon1.gif','img/icon2.gif','img/icon3.gif'];
+				var se=0;
+				for (var i = 0; i < oImg.length; i++) {
+					oImg[i].index=i+1;				
+				}
+				function setSe(s){
+					setRest();
+					// if(s>0)
+					// {
+					// 	if(s<3)
+					// 	{
+					// 		for (var i = 0; i < s; i++) 
+					// 		{
+					// 			oImg[i].src=imglist[1];
+					// 		}	
+					// 		ospan.innerHTML="较差";						
+					// 	}
+					// 	else if(s<4)
+					// 	{
+					// 		for (var i = 0; i < s; i++) 
+					// 		{
+					// 			oImg[i].src=imglist[2];
+					// 		}						
+					// 		ospan.innerHTML="还行";
+					// 	}
+					// 	else if(s<5)
+					// 	{
+					// 		for (var i = 0; i < s; i++) 
+					// 		{
+					// 			oImg[i].src=imglist[2];
+					// 		}						
+					// 		ospan.innerHTML="推荐";
+					// 	}
+					// 	else if(s==5)
+					// 	{
+					// 		for (var i = 0; i < s; i++) 
+					// 		{
+					// 			oImg[i].src=imglist[2];
+					// 		}						
+					// 		ospan.innerHTML="力荐";
+					// 	}}
+
+
+					switch(s){
+						case 0:break;
+						case 1:
+						case 2:
+						{for (var i = 0; i < s; i++) {oImg[i].src=imglist[1];} ospan.innerHTML="较差";} break;
+						case 3:
+						{for (var i = 0; i < s; i++) {oImg[i].src=imglist[2];} ospan.innerHTML="还行";} break;
+						case 4:
+						{for (var i = 0; i < s; i++) {oImg[i].src=imglist[2];} ospan.innerHTML="推荐";} break;
+						case 5:
+						{for (var i = 0; i < s; i++) {oImg[i].src=imglist[2];} ospan.innerHTML="力荐";} break;
+					}
+				}
+				function setRest(){
+					for (var i = 0; i < oImg.length; i++) 
+					{
+						oImg[i].src=imglist[0];
+					}
+					ospan.innerHTML="";
+				}
+				for (var i = 0; i < oImg.length; i++) {
+					oImg[i].onclick=function(){						
+						if(se==this.index)
+						{
+							setRest();
+							se=0;
+						}
+						else
+						{
+							setSe(this.index);
+							se=this.index;	
+						}
+						alert(se);				
+					}
+					oImg[i].onmouseout=function(){					
+						setSe(se);
+					}
+					oImg[i].onmouseover=function(){
+						setSe(this.index);
+					}
+				}
+			}();
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<span>总体评价:</span>
+		<img src="img/icon1.gif" alt="">
+		<img src="img/icon1.gif" alt="">
+		<img src="img/icon1.gif" alt="">
+		<img src="img/icon1.gif" alt="">
+		<img src="img/icon1.gif" alt="">		
+		<span>很好</span>
+	</div>
+</body>
+</html>
