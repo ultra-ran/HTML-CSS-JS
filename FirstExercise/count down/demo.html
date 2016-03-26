@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lte IE 6]>
+	<script src="/js/DD_belatedPNG_0.0.8a.js"></script>
+	<script>
+		DD_belatedPNG.fix('.png_bg');
+	</script>
+	<![endif]-->
+	<style>
+		*{
+			margin: 0;padding: 0;
+		}
+		body{
+			background: #fff url(images/body.gif) repeat;
+		}
+		#wrapper{
+			position: relative;
+			width: 600px;
+			height: 600px;
+			margin: 0 auto;
+			background: #fff url(images/miaov_bg.jpg) center center no-repeat;
+			overflow: hidden;
+		}
+		#wrapper img{
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			top:125px;
+			left:237px; 
+			opacity: 0;
+			filter: alpha(opacity:0);
+			cursor:pointer;
+		}
+		#wrapper .banner{
+			position: absolute;
+			top: 77px;
+			left: 127px;
+		}
+		.banner span{
+			padding-top: 3px;
+			color: white;
+			font-size: 18px;
+			float: left;
+		}
+		.banner input{
+			float: left;
+			width: 74px;
+			height: 20px;
+			margin-top: 2px;
+			margin-left: 8px;
+			border: none;
+			background:none;
+			text-align: center;
+		}
+		.banner .space2{
+			width: 25px;
+			margin-left: 5px;
+			margin-left: 12px;
+		}
+		.banner .text{
+			width: 41px;
+			margin-left: 8px;
+		}
+		.banner .text2{
+			width: 41px;
+			margin-left: 0px;
+		}
+		#wrapper p{
+			position: absolute;
+			color: white;
+			top: 330px;
+			width: 100%;
+			text-align: center;
+			font-size: 20px;
+		}
+		#wrapper p span{
+			color:red;
+		}
+		#wrapper .date {
+			position: absolute;
+			top: 365px;
+			left: 90px;
+			font-size: 48px;
+			color:yellow;
+		}
+		.date span{
+			position: absolute;
+			top: 0;
+		}
+		#hour{
+			left:130px;
+		}
+		#min{
+			left:260px;
+		}
+		#sec{
+			left:365px;
+		}
+
+	</style>
+	<script>
+		window.onload=function(){
+			// 图片透明度自动改变动画
+			function doMoveOpacity(obj,target1,target2){
+				var target=target1;
+				var flag=true;
+				if(target1>target2)
+				{
+					target1=target2;
+					target2=target;
+				}
+				var iSpeed=target1;
+				var dir=5;
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					doMove(obj);
+				},80);
+			// 设置图片透明度在target1与target2之间自动变化
+			function doMove(obj){
+					if(iSpeed<target2&&flag)
+					{
+						iSpeed+=dir;
+						if(iSpeed==target2)
+							flag=false;
+					}
+					else
+					{
+						iSpeed-=dir;
+						if(iSpeed==target1)
+							flag=true;
+					}
+					obj.style.filter="alpha(opacity:"+iSpeed+")";
+					obj.style.opacity=iSpeed/100;
+					// console.log(iSpeed)
+				}
+
+			}
+			// 将数字格式化成制定的位数
+			function dateFormate(num,bit){
+				switch(bit)
+				{
+					case 2:
+					{
+						if(num<10)
+							return '0'+num;
+						else
+							return num;
+					}
+					break;
+					case 3:
+					{
+						if(num>9&&num<100)
+							return '0'+num;
+						else if(num<9)
+							return '0'+'0'+num;
+						else
+							return num;
+					}
+					break;
+				}
+			}
+			// 日期有效性测试
+			function dateTest(year,month,day){
+					var yearTest=/^\d{4}$/;
+					var monthTest=/^\d{1,2}$/;
+					var dayTest=/^\d{1,2}$/;
+					if(yearTest.test(year)&&monthTest.test(month)&&dayTest.test(day)&&month<13&&day<32)
+						return true;
+					else return false;
+				}
+
+
+			var obj=document.getElementById('e1');
+			var wrapper=document.getElementById('wrapper');
+			var year=wrapper.getElementsByTagName('input')[0];
+			var month=wrapper.getElementsByTagName('input')[1];
+			var day=wrapper.getElementsByTagName('input')[2];
+			e1.onclick=function(){
+				clearInterval(this.timer2);
+				clearInterval(this.timer);
+				var that=this;
+				var opacityOff=true;
+				var oDay=document.getElementById('day');
+				var oHour=document.getElementById('hour');
+				var oMin=document.getElementById("min");
+				var oSec=document.getElementById('sec');
+				var oP=wrapper.getElementsByTagName('p')[0];
+				var oSpan=oP.getElementsByTagName('span')[0];
+				var oEndDate=new Date();
+				if(dateTest(parseInt(year.value),parseInt(month.value),parseInt(day.value)))
+				{
+					//diffSec();
+					// this.timer2=setInterval(diffSec,1000);					
+					oEndDate.setFullYear(parseInt(year.value));
+					oEndDate.setMonth(parseInt(month.value)-1);
+					oEndDate.setDate(parseInt(day.value));
+					oEndDate.setHours(0);
+					oEndDate.setMinutes(0);
+					oEndDate.setSeconds(0);
+					oSpan.innerHTML=year.value+'年'+month.value+'月'+day.value+'日'+'0时0分0秒';
+				}	
+				else
+				{
+					alert("请输入合法日期");
+					clearInterval(that.timer2);
+					clearInterval(that.timer);	
+				}
+				function diffSec(){
+					var today=new Date();
+					
+					var newyear=today.getFullYear();
+					var newmonth=today.getMonth();
+					var newday=today.getDate();
+					var newhour=today.getHours();
+					var newmin=today.getMinutes();
+					var newsec=today.getSeconds();
+					var iday,ihour,imin,isec;
+					
+					// 计算两个日期之间的毫秒数并转化为秒数
+					var diff=(oEndDate-Date.parse(today))/1000;
+					if(diff<0)
+					{
+						oDay.innerHTML='000';
+						oHour.innerHTML='00';
+						oMin.innerHTML='00';
+						oSec.innerHTML='00';
+						obj.style.filter="alpha(opacity:0)";
+						obj.style.opacity=0;
+						clearInterval(that.timer2);
+						clearInterval(that.timer);
+						alert("已到期");
+						
+					}
+					else if(diff>0){
+						iday=parseInt(diff/86400);
+						diff%=86400;
+						ihour=parseInt(diff/3600);
+						diff%=3600;
+						imin=parseInt(diff/60);
+						diff%=60;
+						isec=parseInt(diff);
+						// console.log(iday,ihour,imin,isec);
+						if(opacityOff)
+						{
+							doMoveOpacity(that,10,100)
+							opacityOff=false;
+						};
+						oDay.innerHTML=dateFormate(iday,3);
+						oHour.innerHTML=dateFormate(ihour,2);
+						oMin.innerHTML=dateFormate(imin,2);
+						oSec.innerHTML=dateFormate(isec,2);
+
+					}
+					else
+					{
+						clearInterval(that.timer2);
+						clearInterval(that.timer);
+					}
+
+
+				}
+
+			}
+
+		}
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="banner">
+			<span class="space1">请输入:</span>
+
+			<input type="text" class="long_text" value="2016">
+			<span class="space2">年</span>
+
+			<input type="text" class="text" value="3">
+			<span class="space2">月</span>
+
+			<input type="text" class="text2" value="27">
+			<span class="space2">日</span>
+
+		</div>
+		<img src="images/btn_hover.jpg" id="e1" alt="动态图片">
+		<p>现在距离-&nbsp;<span></span>&nbsp;-还剩:</p>
+		<div class="date">
+			<span id="day">000</span>
+			<span id="hour">00</span>
+			<span id="min">00</span>
+			<span id="sec">00</span>
+		</div>
+	</div>
+</body>
+</html>
