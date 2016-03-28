@@ -193,8 +193,8 @@
 				var oEndDate=new Date();
 				if(dateTest(parseInt(year.value),parseInt(month.value),parseInt(day.value)))
 				{
-					//diffSec();
-					// this.timer2=setInterval(diffSec,1000);					
+					diffSec();
+					this.timer2=setInterval(diffSec,1000);					
 					oEndDate.setFullYear(parseInt(year.value));
 					oEndDate.setMonth(parseInt(month.value)-1);
 					oEndDate.setDate(parseInt(day.value));
