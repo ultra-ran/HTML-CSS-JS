@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动练习1</title>
+	<style>
+		body,dl,dd,ul{
+			margin: 0;padding: 0;
+			font-family: "宋体";
+
+		}
+		img{border: none;vertical-align: top;}
+		ul{list-style: none;}
+		li{vertical-align:top;}
+		a{
+			text-decoration: none;
+			color:#4f6c84;
+			font-size: 12px;
+		}
+		.clear{zoom:1;}
+		.clear:after{
+			content: ''	;
+			display: block;
+			clear: both;
+		}
+		#wrap{
+			width: 445px;
+			margin:30px auto;
+			padding: 12px 8px 0 7px;
+			background: #fff url(img/pic1.gif)  220px 0 no-repeat;
+		}
+		.left{
+			float: left;
+			width: 212px;
+		}
+		.leftTop .pic{
+			float: left;
+			width: 124px;
+			background: #fff url(img/pic2.gif) right 0 no-repeat;
+			padding-right: 4px;
+		}
+		.leftTop .pic a{
+			display: block;
+			padding: 3px;
+			border: 1px solid #c3cfd9;
+		}
+		.leftTop dl{
+			float: left;
+			width: 60px;
+			padding-left: 6px;
+			font-size: 12px;
+			color:#7190a6;
+			line-height: 20px;
+		}
+		.leftTop dt{
+			color: #4f6c84;
+		}
+		.leftBottom{
+			font:normal 12px/20px "宋体";
+			padding-top: 10px;
+		}
+		.leftBottom li{
+			background:#fff url(img/pic5.gif) 0 7px no-repeat;
+			padding-left: 10px;
+		}
+		.right{
+			width: 220px;
+			float: right;
+		}
+		.right li{
+			padding-left: 10px;
+			width: 100px;
+			float: left;
+			text-align: center;
+		}
+		.right a{
+			line-height: 20px;
+			display: block;
+
+		}
+		.right img{
+			border: 1px solid #c3cfd9;
+			padding: 3px;
+		}
+		.right strong{
+			display: block;
+			padding-top: 3px;
+			font:normal 12px/24px "宋体";
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap" class="clear">
+		<div class="left ">
+			<div class="leftTop clear">
+				<div class="pic">
+					<a href="#">
+						<img src="img/pic3.gif" alt="">
+					</a>
+				</div>
+				<dl>
+					<dt><a href="#">潜伏</a></dt>
+					<dd>导演：姜伟</dd>
+					<dd>主演：姚晨 孙红雷</dd>
+				</dl>
+			</div>
+			<ul class="leftBottom">
+				<li><a href="#">海清张嘉译演绎房奴生活《蜗居》</a></li>
+				<li><a href="#">琼瑶经典言情剧集锦</a>
+					<a href="#">梦露电影知多少</a></li>
+				</ul>
+			</div>
+			<ul class="right">
+				<li><a href=""><img src="img/pic4.gif" alt=""><strong>将爱情进行到底</strong></a></li>
+				<li><a href=""><img src="img/pic4.gif" alt=""><strong>将爱情进行到底</strong></a></li>
+			</ul>
+		</div>
+	</body>
+	</html>
