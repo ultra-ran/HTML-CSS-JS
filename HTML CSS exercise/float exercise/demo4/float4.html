@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动4</title>
+	<style>
+		body,p,ul{margin: 0;padding: 0;font-size: 12px;font-family: "宋体";}
+		ul{list-style: none;}
+		li{vertical-align: top}
+		img{border: none;vertical-align: top;}
+		a{text-decoration: none;color: #1A1A1A}
+		.clear{
+			zoom:1;
+		}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.wrap{
+			width: 659px;
+			padding: 16px 0 25px 19px;
+			border: 1px solid  #D9D9D9;
+			margin:30px 30px;
+		}
+		.wrap .head{
+			height: 26px;
+			background: #fff url(img/header.gif) 0 0 no-repeat;
+			padding-left: 101px;
+		}
+		.wrap .head a{
+			/*height: 26px;*/
+			padding-top: 14px;
+			margin-right: 19px;
+			display: inline-block;
+			font-family: "微软雅黑"
+		}
+		.wrap .head .last-a{
+			padding-left: 144px;
+		}
+		.picBox li{
+			padding-top: 20px;
+			float: left;
+			padding-right: 19px;
+			position: relative;
+
+		}
+		.pic_sp{
+			position: absolute;
+			left: 63px;
+			top: 20px;
+
+		}
+		.hidden{
+			display: none;
+		}
+		.picBox  p{
+			padding-top: 7px;
+
+		}
+		
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap clear">
+		<div class="head">
+			<a href="#">电视剧频道</a>
+			<a href="#">台剧</a>
+			<a href="#">韩剧</a>
+			<a href="#">TVB</a>
+			<a href="#">美剧</a>
+			<a href="#">最新片花</a>
+			<a href="#" class="last-a">更多>></a>
+		</div>
+		<ul class="picBox clear">
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp hidden" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+			<li><a href="#"><img src="img/pic1.jpg" alt="图片"><img class="pic_sp" src="img/pic_sp.gif" alt="图片"><p>一个鬼子都不留</p></a></li>
+		</ul>
+	</div>
+</body>
+</html>
