@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动练习2</title>
+	<style>
+		body,h2,p,ul,h3{margin: 0;padding: 0;font-size: 12px;font-family: "宋体";}
+		ul,li{list-style: none;}
+		li{vertical-align: top;}
+		a{text-decoration: none;color: #33338A;}
+		img{border: none;vertical-align: top;}
+		.clear{zoom:1;}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.wrap{
+			width: 366px;
+			margin:30px auto;
+			background-color: #f4fafb;
+
+		}
+		.header{
+			height: 24px;
+			line-height: 24px;
+			font-weight: bold;
+			color: #33338A;
+			background: #fff url(img/head_bg.png) repeat-x;
+
+		}
+		.header h2{
+			padding-left: 31px;
+			background:url(img/head_bg2.gif) 6px 5px  no-repeat;
+		}
+		.content>li{
+			padding:13px 0 9px 5px;
+		}
+		.left {
+			float: left;
+			width: 101px;
+		}
+		.left img{
+			padding: 2px;
+			border: 1px solid #C8C4D3
+		}
+		.right{
+			float: left;
+			width: 247px;
+			padding-left: 13px;
+		}
+		.right h3{
+			line-height: 24px;
+		}
+		.right p{
+			line-height: 20px;
+			color:#666;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h2>外媒评论精选</h2>
+		</div>
+		<ul class="content">
+			<li class="clear">
+				<ul>
+					<li class="left">
+						<a href="#">
+							<img src="img/pic1.jpg" alt="图片">
+						</a>
+					</li>
+					<li class="right">
+						<h3>《加勒比海盗4》-- 商业味浓郁</h3>
+						<p>本机加勒比海盗讲述杰克船长受英王所托寻找不老泉，与他…[<a href="#">详细</a>]</p>
+					</li>
+				</ul>
+				<li class="clear">
+				<ul>
+					<li class="left">
+						<a href="#">
+							<img src="img/pic1.jpg" alt="图片">
+						</a>
+					</li>
+					<li class="right">
+						<h3>《加勒比海盗4》-- 商业味浓郁</h3>
+						<p>本机加勒比海盗讲述杰克船长受英王所托寻找不老泉，与他…[<a href="#">详细</a>]</p>
+					</li>
+				</ul>
+				<li class="clear">
+				<ul>
+					<li class="left">
+						<a href="#">
+							<img src="img/pic1.jpg" alt="图片">
+						</a>
+					</li>
+					<li class="right">
+						<h3>《加勒比海盗4》-- 商业味浓郁</h3>
+						<p>本机加勒比海盗讲述杰克船长受英王所托寻找不老泉，与他…[<a href="#">详细</a>]</p>
+					</li>
+				</ul>
+				
+
+			</div>
+		</body>
+		</html>
