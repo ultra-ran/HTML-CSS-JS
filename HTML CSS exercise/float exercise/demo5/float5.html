@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float5</title>
+	<style>
+		body,p,h2,h3,ul{
+			margin: 0;
+			padding: 0;
+			font-size: 12px;
+			font-family: "宋体";
+		}
+		li{
+			vertical-align: top;
+			list-style: none;
+		}
+		img{
+			border: none;
+			vertical-align: top;
+		}
+		a{
+			color:#806F66;
+			text-decoration: none; 
+		}
+		.clear{zoom: 1;}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.wrap{
+			width: 740px;
+			margin: 30px auto;
+		}
+		.content{
+			background-color: #F9F0E3;
+		}
+		.head h2{
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+			color: #756A69;
+			font-family: "微软雅黑"
+		}
+		.nav{
+			border-bottom: 2px solid #806F66;
+			background-color: #FFF;
+		}
+		.nav li{
+			display: inline-block;
+			float: left;
+			width: 100px;
+			margin-right: 1px;
+			line-height: 24px;
+			height: 24px;
+			background-color: #EADDCC;
+			text-align: center;
+			color:#595959;
+		}
+		.nav .active,.active a{
+			background-color: #806F66;
+			color: #FFF;
+		}
+		.textList li{
+			padding: 16px 0 4px 32px;
+			border-bottom:1px solid #E3E3E3;
+			color: #666;
+			position: relative;
+		}
+		.textList img{
+			float: left;
+			border: 3px solid #CCC;
+		}
+		.textList div{
+			float: left;
+			width: 518px;
+			padding-left: 10px;
+		}
+		.textList h3{
+			color: #806F66;
+			line-height: 20px;
+			height: 20px;
+		}
+		.textList p{
+			line-height: 20px;
+			letter-spacing: 1px;
+
+		}
+		.textList strong{
+			padding-right: 6px;
+		}
+		.textList em{
+			font-style: normal;
+			font-weight: bold;
+			color: #806F66;
+		}
+		.textList a{
+			text-decoration: underline;
+			font-weight: bold;
+			padding-left: 2px;
+		}
+		.textList .time-s{
+			line-height: 40px;
+			height: 40px;
+			color: #B5B4B3;
+		}
+		.textList div img{
+			border: none;
+			position: absolute;
+			left: 714px;
+			top: 15px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="head">
+			<h2>消息盒子</h2>
+		</div>
+		<div class="content">
+			<ul class="nav clear">
+				<li><a href="#">未读</a></li>
+				<li class="active"><a href="#">全部</a></li>
+				<li><a href="#"></a>我的成长</li>
+				<li><a href="#">特权活动</a></li>
+				<li><a href="#"></a>系统信息</li>
+				<li><a href="#"></a>其他</li>
+			</ul>
+			<ul class="textList">
+				<li class="clear">
+					<img src="img/pic1.gif" alt="图片">
+					<div>
+						<h3>天猫俱乐部:</h3>
+						<p class="text"><strong>天猫达人经验值发放成功</strong>您上个月购买天猫商品总工获得<em>1600</em>点天猫达人经验值，已经发放成功！查看天猫达人经验值请<a href="#">点击查看</a></p>
+						<p class="time-s">2013年03月04日</p>
+						<a href="#"><img src="img/icon.gif" alt="图片"></a>
+					</div>
+				</li>
+				<li class="clear">
+					<img src="img/pic1.gif" alt="图片">
+					<div>
+						<h3>天猫俱乐部:</h3>
+						<p class="text"><strong>天猫达人经验值发放成功</strong>您上个月购买天猫商品总工获得<em>1600</em>点天猫达人经验值，已经发放成功！查看天猫达人经验值请<a href="#">点击查看</a></p>
+						<p class="time-s">2013年03月04日</p>
+						<a href="#"><img src="img/icon.gif" alt="图片"></a>
+					</div>
+				</li>
+				<li class="clear">
+					<img src="img/pic1.gif" alt="图片">
+					<div>
+						<h3>天猫俱乐部:</h3>
+						<p class="text"><strong>天猫达人经验值发放成功</strong>您上个月购买天猫商品总工获得<em>1600</em>点天猫达人经验值，已经发放成功！查看天猫达人经验值请<a href="#">点击查看</a></p>
+						<p class="time-s">2013年03月04日</p>
+						<a href="#"><img src="img/icon.gif" alt="图片"></a>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
