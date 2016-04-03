@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position1</title>
+	<style>
+		body,h2,ul,p,dl,dd{
+			margin: 0;
+			padding: 0;
+			font-size: 11px;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			vertical-align: top;
+		}
+		img{
+			border: none;
+			vertical-align: bottom;
+		}
+		a{
+			text-decoration: none;
+			color:#014EC2;
+		}
+		.clear{zoom:1;}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.wrap{
+			margin:30px auto;
+			width: 608px;
+			border:1px solid #E5E5E5;
+		}
+		.nav{
+			font-family: "宋体";
+			background-color: #EAF9FE;
+			overflow: hidden;
+			
+		}
+		.nav li{
+			float: left;
+		}
+		.nav li a{
+			display: inline-block;
+			padding: 7px 15px 9px 14px;
+			border-right: 1px solid #E7E6E4;
+			border-bottom: 1px solid #E7E6E4;
+			font-size: 11px;
+
+		}
+		.nav .active a{
+			float: left;
+			padding: 6px 15px 9px 14px;
+			border-bottom: 1px solid #fff;
+			font-size: 14px;
+			font-weight: bold;
+			background-color: #fff;
+		}
+		.subnav{
+			overflow: hidden;
+			border-bottom: 1px solid #E7E6E4;
+		}
+		.fist-item{
+			padding-left: 61px;
+
+		}
+		.subnav li a{
+			font-size: 11px;
+			line-height: 11px;
+			margin:9px 0 10px;
+			display: inline-block;
+			padding:0 9px 0 8px;
+			border-bottom: none;
+		}
+		li.last-item a{
+			border-right:none;
+		}
+		.con1LL img{
+			width: 128px;
+			height: 80px;
+		}
+		.con1RR  ul{
+			padding-left: 22px;
+			line-height: 19px;
+			font-size: 11px;
+			padding-bottom: 1px;
+
+		}
+		.con1{
+			float: left;
+			position: relative;
+			padding:14px;
+			padding-bottom: 7px;
+		}
+		.con1LL a span{
+			position: absolute;
+			left: 14px;
+			top:103px;
+			width: 128px;
+			background: #000 url(img/icon.gif)  107px center no-repeat;
+			text-indent: 7px;
+			line-height: 18px;
+			opacity: 0.7;
+			color:#fff;
+			filter: alpha(opacity=70);
+		}
+		.con1LL p a{
+			line-height: 26px;
+		}
+		.con1LL,.con1RR{
+			float: left;
+			margin-top: 10px;
+		}
+		.content2{
+			border-top:1px solid #E5E5E5;
+		}
+		.con2List{
+			float: left;
+			padding-top: 17px;
+			padding-left: 16px;
+			padding-right: 8px;
+		}
+		.con2ListT div{
+			float: left;
+			border: 1px solid #C5C5C5;
+			border-top: none;
+			border-left: none;
+			position: relative;
+		}
+		.con2ListT a{
+			display: inline-block;
+			position: relative;
+			bottom: 1px;
+			right: 1px;
+			border: 1px solid #C5C5C5;
+			border-top: none;
+			border-left: none;
+		}
+		.con2ListT a img{
+			position: relative;
+			bottom: 1px;
+			right: 1px;
+		}
+		.con2ListT span{
+			position: absolute;
+			right: 2px;
+			bottom:3px;
+			width: 123px;
+			background: #000 url(img/icon.gif)  107px center no-repeat;
+			text-indent: 7px;
+			line-height: 18px;
+			opacity: 0.7;
+			color:#fff;
+			filter: alpha(opacity=70);
+		}
+		.con2ListB a{
+			display: inline-block;
+			padding-top: 3px;
+			line-height: 22px;
+		}
+		.con2ListB span{
+			display: block;
+			line-height: 20px;
+			color:#909090;
+		}
+		.foot{
+			padding-top: 9px;
+		}
+		.foot dl{
+			float: left;
+			padding-left: 14px;
+		}
+		.foot  dd,.foot dt{
+			float: left;
+			line-height: 22px;
+
+		}
+		.foot dt{
+			color:#919191;
+		}
+		.foot  dd a{
+			padding-right: 6px;
+			padding-left: 6px;
+			border-left: 1px solid #8F8F8F;
+		}
+		.foot dd.footItem a{
+			padding-left: 0;
+			border-left: none;
+		}
+		dl.showTime{
+			padding-left: 21px;
+		}
+		.m-class{
+			padding-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav ">
+			<li class="active"><a href="#">最新电视剧</a></li>
+			<li><a href="#">大陆剧</a></li>
+			<li><a href="#">韩剧</a></li>
+			<li><a href="#">港台剧</a></li>
+			<ul class="subnav">
+				<li class="fist-item"><a href="#">爱情有点蓝</a></li>
+				<li ><a href="#">风语</a></li>
+				<li ><a href="#">欢喜婆婆</a></li>
+				<li class="last-item"><a href="#">延安爱情</a></li>
+			</ul>
+		</ul>
+		<div class="content1 clear">
+			<ul class="clear">
+				<li class="con1 con1Top">
+					<div >
+						<img src="img/title_bg.gif" alt="">
+						<a href="#">首席赞助</a>
+					</div>
+					<div class="con1LL clear">
+						<a href=#"">
+							<img src="img/pic1.gif" alt="">
+							<span>40集全</span>
+						</a>
+						<p><a href="#">《五星红旗》大结局</a></p>
+					</div>
+					<div class="con1RR">
+						<ul>
+							<li><a href="#">文章变特种兵：雪豹</a></li>
+							<li><a href="#">新武侠：怪侠一枝梅</a></li>
+							<li><a href="#">新包青天之七侠五义</a></li>
+							<li><a href="#">央一武侠剧：侠隐记</a></li>
+							<li><a href="#">青春期撞上更年期！</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="con1 con1Top">
+					<div >
+						<img src="img/title_bg.gif" alt="">
+						<a href="#">首席赞助</a>
+					</div>
+					<div class="con1LL clear">
+						<a href=#"">
+							<img src="img/pic1.gif" alt="">
+							<span>40集全</span>
+						</a>
+						<p><a href="#">《五星红旗》大结局</a></p>
+					</div>
+					<div class="con1RR">
+						<ul>
+							<li><a href="#">文章变特种兵：雪豹</a></li>
+							<li><a href="#">新武侠：怪侠一枝梅</a></li>
+							<li><a href="#">新包青天之七侠五义</a></li>
+							<li><a href="#">央一武侠剧：侠隐记</a></li>
+							<li><a href="#">青春期撞上更年期！</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content2 clear">
+			<ul class="clear">
+				<li class="con2List ">
+					<div class="con2ListT">
+						<div>
+							<a href="#">
+								<img src="img/pic2.gif" alt="">
+								<span>36集全</span>
+							</a>
+						</div>
+					</div>
+					<div class="con2ListB">
+						<a href="#">江苏卫视：中国远征军</a>
+						<span>黄志忠张丰毅枪林弹雨</span>
+					</div>
+				</li>
+				<li class="con2List">
+					<div class="con2ListT">
+						<div>
+							<a href="#">
+								<img src="img/pic2.gif" alt="">
+								<span>36集全</span>
+							</a>
+						</div>
+					</div>
+					<div class="con2ListB">
+						<a href="#">江苏卫视：中国远征军</a>
+						<span>黄志忠张丰毅枪林弹雨</span>
+					</div>
+				</li>
+				<li class="con2List">
+					<div class="con2ListT">
+						<div>
+							<a href="#">
+								<img src="img/pic2.gif" alt="">
+								<span>36集全</span>
+							</a>
+						</div>
+					</div>
+					<div class="con2ListB">
+						<a href="#">江苏卫视：中国远征军</a>
+						<span>黄志忠张丰毅枪林弹雨</span>
+					</div>
+				</li>
+				<li class="con2List">
+					<div class="con2ListT">
+						<div>
+							<a href="#">
+								<img src="img/pic2.gif" alt="">
+								<span>36集全</span>
+							</a>
+						</div>
+					</div>
+					<div class="con2ListB">
+						<a href="#">江苏卫视：中国远征军</a>
+						<span>黄志忠张丰毅枪林弹雨</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="foot clear">
+			<dl class="area-text">
+				<dt>地区:</dt>
+				<dd class="footItem"><a href="#">大陆</a></dd>
+				<dd><a href="#">大陆</a></dd>
+				<dd><a href="#">大陆</a></dd>
+				<dd><a href="#">大陆</a></dd>
+				<dd><a href="#">大陆</a></dd>
+			</dl>
+			<dl class="showTime">
+				<dt>上映:</dt>
+				<dd class="footItem"><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+				<dd><a href="#">2010</a></dd>
+			</dl>
+			<dl class="m-class">
+				<dt class="area">类型:</dt>
+				<dd class="footItem"><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+				<dd><a href="#">言情</a></dd>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>
