@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动门技术之两层嵌套</title>
+	<style>
+		nav a{
+			background: url(img/btn_bgr.gif) right 0 no-repeat;
+			display: inline-block;
+			margin-left: 1px;
+			font-size: 13px;
+			text-decoration: none;
+			color:#fff;
+			padding: 0 18px;
+			line-height:30px;
+		}
+		.navR li{
+			background: url(img/btn_bgc.gif) no-repeat;
+			text-align: center;
+			margin:0 1px;
+			list-style: none;
+			float: left;
+		}
+		nav{
+			background: #23232F url(img/bg_l.gif) 0 0 no-repeat;
+			cursor: pointer;
+		}
+		.navR{
+			background:  url(img/bg_l.gif) right 0 no-repeat;
+			overflow: hidden;
+			margin:0 auto;
+
+		}
+		.navR li:hover{
+			background: url(img/btn_bgc_ac.gif) repeat-x;
+		}
+		
+		.navR a:hover{
+			background: url(img/btn_bgr_ac.gif) right 0 no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul class="navR">
+			<li>
+				<a href="#">MivaoV</a>
+			</li>
+			<li>
+				<a href="#">课堂</a>
+			</li>
+			<li>
+				<a href="#">关于我们</a>
+			</li>
+			<li>
+				<a href="#">加入MivaoV</a>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

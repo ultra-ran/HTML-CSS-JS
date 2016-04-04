@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css精灵、宽高可扩展的圆角盒子</title>
+	<style>	
+		.box{
+			width: 300px;
+			height: 200px;
+			margin: 30px auto;
+		}
+		.boxHead,.boxHeadL,.boxHeadR,.boxFoot,.boxFootL,.boxFootR{
+			background:  url(img/bg.png) no-repeat;
+		}
+		.boxHead{
+			background-position: 0 -41px;
+			background-repeat: repeat-x;
+		}
+		.boxHeadL{
+			background-position: 0 -9px;
+			background-repeat: no-repeat;
+		}
+		.boxHeadR{
+			background-position: right 0 ;
+			background-repeat: no-repeat;
+			height: 9px;
+		}
+		.content{
+			border-left:2px solid #989898;
+			border-right:1px solid #989898;
+		}
+		.boxFootL{
+			background-position: left -18px ;
+			background-repeat: no-repeat;
+		}
+		.boxFootR{
+			background-position: right -25px ;	
+			background-repeat: no-repeat;
+			height: 9px;
+		}
+		.boxFoot{
+			background-position: 0 -34px;
+			background-repeat: repeat-x; 
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="boxHead">
+			<div class="boxHeadL">
+				<div class="boxHeadR"></div>
+			</div>
+		</div>
+		<div class="content">
+			我是内容<br>
+			我是内容<br>
+			我是内容<br>
+			我是内容<br>
+			我是内容<br>
+		</div>
+		<div class="boxFoot">
+			<div class="boxFootL">
+				<div class="boxFootR"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

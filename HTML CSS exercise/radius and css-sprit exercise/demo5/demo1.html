@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角按钮</title>
+	<style>
+	body{
+		background-color: #AB6333;
+		font-size: 14px;
+	}
+		nav li ,nav a,nav i{
+			background:  url(img/bg.png) no-repeat;
+			color:#fff;
+			font-style: normal;
+		}
+		li{
+			list-style: none;
+		}
+		nav i{
+			
+			background-position: right -63px;
+			background-repeat: repeat-x;
+			margin: 0 10px;
+			display: inline-block;
+			
+		}
+		nav li{
+			background-position: left -21px;
+			height: 21px;
+			float: left;
+			margin-left: 2px;
+		}
+		nav a{
+			background-position: right -42px;
+			display: inline-block;
+			position: relative;
+		}
+		nav span{
+			display: inline-block;
+			padding: 0 16px;
+			line-height: 19px;
+			height: 21px;
+		}
+		.active{
+			background:  url(img/bg.png) no-repeat center 1px;
+		}
+		nav span:hover{
+			background:  url(img/bg.png) no-repeat center 1px;
+		}
+		
+
+
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#"><i ><span class="active">Home</span></i></a></li>
+			<li><a href="#"><i ><span class="">About us</span></i></a></li>
+			<li><a href="#"><i ><span class="">Contact us</span></i></a></li>
+			<li><a href="#"><i ><span class="">Products</span></i></a></li>
+
+		</ul>
+	</nav>
+</body>
+</html>
