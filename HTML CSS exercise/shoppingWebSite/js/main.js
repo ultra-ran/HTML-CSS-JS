@@ -5,6 +5,7 @@ window.onload = function() {
     my.app.nextPrevShow();
     // 焦点图轮播
     my.app.bannerTab();
+    my.app.show();
 }
 
 
@@ -76,9 +77,15 @@ my.ui.fade = function(obj, attr, dir, target) {
 }
 //_____元素显示隐藏_________________________
 my.ui.elementShow=function(obj){
-	var show=obj.style.display;
-	if(show)
-	obj.style.display="block";
+	var obj=obj||this;
+	if(obj.style.display=='none')
+	{
+		obj.style.cssText="display:inline-block";
+	}
+	else
+	{
+		obj.style.cssText="display:none"
+	}
 }
 
 
@@ -169,7 +176,53 @@ my.app.bannerTab = function() {
         }
         my.ui.fade(aLi[now], 'opacity', 5, 100);
     }
+}
+my.app.show=function(){
+	var list=document.querySelectorAll('.sortcom>dd');
+	var sortDt=document.querySelectorAll('.sortcom dt');
+	var sort=document.querySelector('#boxR>.sort');
+	var aUl=document.querySelectorAll('#boxR .sort ul');
+
+	for (var i = 0; i < aUl.length; i++) {
+		aUl[i]
+	}
+	// console.log(list[1])
+	sort.addEventListener('click',show,false);
+	document.addEventListener('click',function(){hiddenlsit(list)},false)
+	function show(ev){
+		ev=ev||window.event;
+		var target=ev.target;
+		//console.log(target)
+		
+		//console.log(target.tagName)
+		for (var i = 0; i < sortDt.length; i++) {
+			// console.log(target)
+			if(target==sortDt[i]||target==sortDt[i].firstElementChild)
+			{
+				for (var j = 0; j < list.length; j++) {
+					if(i!=j)
+					list[j].style.display="none";
+				}
+
+				my.ui.elementShow(list[i]);
+			}
+			
+		}
+		if(target.parentNode.tagName=="LI")
+			{
+				hiddenlsit(list);
+				//console.log(target.innerHTML);
+				target.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstChild.nodeValue=target.textContent
+				console.log(target.value)
 
 
-
+			}
+		ev.stopPropagation();
+		
+	}
+	function hiddenlsit(list){
+		for (var j = 0; j < list.length; j++) 
+			list[j].style.display="none";
+	}
+	
 }

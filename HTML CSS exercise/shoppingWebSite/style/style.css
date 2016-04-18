@@ -1,4 +1,4 @@
-		/*CSS  reset*/
+﻿		/*CSS  reset*/
 		body,h1,h2,h3,p,dl,dd,ul,ol,input{
 			margin: 0;
 			padding: 0;
@@ -428,6 +428,10 @@
 			width: 704px;
 			float: right;
 		}
+		.sort{
+			height: 20px;
+			float: left;
+		}
 		.sortBy{
 			font-size: 12px;
 			line-height: 19px;
@@ -451,10 +455,11 @@
 			color: #747474;
 			cursor: pointer;
 		}
-		.sortcom div{
+		.sortcom dd{
 			position: absolute;
+			background-color: #fff;
 			top: 19px;
-			/*display: none;*/
+			display: none;
 		}
 		.sortcom dd{
 			border-top: none;
@@ -465,6 +470,7 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			line-height: 18px;
 		}
 		.sortcom dt a{
 			position: absolute;
@@ -551,7 +557,7 @@
 			color:#b20e00;
 		}
 		.rightPage a span{
-			font-family: "ËÎÌå";
+			font-family: "arial";
 			padding-left: 7px;
 		}
 		.rightPage a.active,.rightPage a:hover{
