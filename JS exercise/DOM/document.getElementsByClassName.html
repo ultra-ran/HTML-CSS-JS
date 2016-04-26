@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document.getElementsByClassName</title>
+	<script>
+		window.onload=function(){
+		//var ss=document.getElementsByClassName('item i')
+		var ss=ByClassName('Ul',' item    s    i  ');
+		console.log(ss)
+	}
+
+
+// 可用于一个元素多个类的，类选择器
+	function ByClassName(parent,ClassName){
+		var arr=[];
+		var regExp=/\w+/g;
+		var Oparent=document.getElementById(parent);
+		var aEleClass=[];
+		var aClassName=[];
+		var element=Oparent.getElementsByTagName('*');
+		var arrClassName='';
+		var flag;
+		aClassName=ClassName.match(regExp);
+		arrClassName=aClassName.join(' ');
+		for (var i = 0; i < element.length; i++) 
+		{
+			flag=false;
+			aEleClass=element[i].className.match(regExp);
+			if(aClassName.length<=aEleClass.length)
+				for (var j = 0; j < aClassName.length; j++)
+				{
+					if(arrClassName.indexOf(aEleClass[j])==-1)
+						{
+							flag=false;
+							break;
+						}
+					else
+						flag=true;
+				}
+				if(flag)
+					arr[arr.length]=element[i];
+			}
+			return arr;
+		}
+	
+</script>
+</head>
+<body>
+	<h1>测试</h1>
+	<ul id="Ul">
+		<li class="item a">我是1</li>
+		<li class="item b">我是2</li>
+		<li class=" item c">我是3</li>
+		<li class=" item i s">我是4</li>
+		<li class="item i s e">我是5</li>
+		<li class="i">我是6</li>
+	</ul>
+</body>
+</html>
