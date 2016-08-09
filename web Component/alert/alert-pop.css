@@ -1,0 +1,79 @@
+.alert-pop {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid rgba(0,0,0,.5);
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(0,0,0,.5);
+    display: none;
+}
+
+.alert-pop .alert-header {
+    width: 100%;
+    background-color: #855858;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: default;
+}
+
+.alert-pop .alert-header p {
+    padding: 2% 0;
+    margin: 0;
+    min-height: 24px;
+}
+
+.alert-pop a.alert-closeBtn {
+    position: absolute;
+    text-decoration: none;
+    color: #1EA5A2;
+    right: 10px;
+    top: 0;
+    font-size: 2em;
+}
+
+.alert-pop .alert-body {
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+}
+
+.alert-pop .alert-body p {
+    padding: 0 15px 0 ;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    overflow: hidden;
+    height: 90%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.alert-footer {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+
+.alert-footer button {
+    height: 70%;
+    width: 20%;
+    overflow: hidden;
+}
+
+.alert-pop .alert-btn1 {
+    width: 20%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.alert-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    display: none
+}

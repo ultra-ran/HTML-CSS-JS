@@ -3,10 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="alert_pop.css">
+	<link rel="stylesheet" href="alert-pop.css">
 	<script src='js/require.js' data-main='js/main' defer async='true'></script>
 </head>
 <body>
 	<button id="mybtn">提示框</button>
+	<div class="alert-mask">
+		<div class="alert-pop" >
+			<div class="alert-header">
+			<p>提示框</p>
+				<a class = "alert-closeBtn" href = "javascript:void(0)">X</a>
+			</div>
+			<div class="alert-body">
+				<p>我是内容，我是内容</p>
+			</div>
+			<div class="alert-footer">
+				<button class="alert-Btn1">OK</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
